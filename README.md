@@ -1,4 +1,4 @@
-# SimpleTrieTemplate
+# triemplate
 ## Table of Contents
 
 1. [Objective](#objective)
@@ -7,7 +7,7 @@
     2. [Object Details](#object-details)
         1. [Node Class Template](#node-class-template)
         2. [Iterator Class Template](#iterator-class-template)
-        4. [SimpleTrieTemplate Class Template](#simpletrietemplate-class-template)
+        4. [triemplate Class Template](#simpletrietemplate-class-template)
 
 ## Objective
 Create a trie that templatizes the key_types, mapped_types, number of children, and abstracts its mapping/erasing functions.
@@ -22,7 +22,7 @@ The indexer is part of the template parameters, the indexer returns an index for
 
 #### Node Class Template
 ##### Description:
-Node<typename K, typename T, uint32_t S> : the node structure used by SimpleTrieTemplate
+Node<typename K, typename T, uint32_t S> : the node structure used by triemplate
 
 ##### Member Variables:
 variable | description
@@ -77,9 +77,9 @@ bool operator!=(const Iterator &rhs) const; | returns the opposite of operator==
 
 
 
-#### SimpleTrieTemplate Class Template
+#### triemplate Class Template
 ##### Description:
-SimpleTrieTemplate\<K,T,S,Indexer,Modifier,Eraser\> : a template for a trie data structure that stores T values, aka mapped_types (that's right, multiple, in a forward_list) at a specific K value, ie key values, ie key_types, within the trie.  The trie's nodes' all have S number of children.  The trie can be navigated through either by iterators (ie in sequential order), or via the cooperation of the indexer and modifier classes (ie via a direct node sequence).
+treimplate\<K,T,S,Indexer,Modifier,Eraser\> : a template for a trie data structure that stores T values, aka mapped_types (that's right, multiple, in a forward_list) at a specific K value, ie key values, ie key_types, within the trie.  The trie's nodes' all have S number of children.  The trie can be navigated through either by iterators (ie in sequential order), or via the cooperation of the indexer and modifier classes (ie via a direct node sequence).
 
 ##### Member Variables:
 variable | description
@@ -92,9 +92,9 @@ Node* root_; | a pointer to the first node of the trie
 ##### Member Functions:
 signature | description
 ----------|-----------
-explicit SimpleTrieTemplate(); | default constructor
-explicit SimpleTrieTemplate(...parameters...); parameters include (const SimpleTrieTemplate& rhs) or (const SimpleTrieTemplate&& rhs) | copy constructor
-SimpleTrieTemplate &operator=(...parameters...); parameters include (const SimpleTrieTemplate& rhs) or (const SimpleTrieTemplate&& rhs) | assignment operator
+explicit triemplate(); | default constructor
+explicit SimpleTrieTemplate(...parameters...); parameters include (const SimpleTrieTemplate& rhs) or (const triemplate&& rhs) | copy constructor
+triemplate &operator=(...parameters...); parameters include (const SimpleTrieTemplate& rhs) or (const treimplate&& rhs) | assignment operator
 bool empty() const noexcept; | returns true if size() returns 0, else false
 uint32_t size() const noexcept; | returns numberArticles
 void clear() noexcept; | empties the trie such that empty() will return true
@@ -105,7 +105,7 @@ void swap(SimpleTrieTemplate& rhs); | swaps all values between *this and rhs
 iterator find(key_type article); | returns an iterator at the end of the node sequence of the article within the trie, else returns end()
 std::pair\<bool,iterator\> scout(key_type article,Node* ancestor = nullptr); | looks for the article, if found returns a pair where its first equals true, and second equals an iterator at the end of the article's node sequence.  Else, it returns false and an iterator at the last node in sequence that still follows the article.
 bool contains(key_type article,Node* ancestor = nullptr); | returns true if the trie contains the article at ancestor, else false
-bool operator==(const SimpleTrieTemplate& rhs) const; | checks for logical equivalence between *this and rhs, excluding that of indexer, modifier, and eraser
-bool operator!=(const SimpleTrieTemplate& rhs) const; | returns the opposite of operator==()
+bool operator==(const treimplate& rhs) const; | checks for logical equivalence between *this and rhs, excluding that of indexer, modifier, and eraser
+bool operator!=(const triemplate& rhs) const; | returns the opposite of operator==()
 iterator begin(); | returns an iterator at the first node
 iterator end(); | returns an iterator one after the last node
