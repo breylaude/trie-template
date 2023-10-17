@@ -1,3 +1,4 @@
+[![C/C++ CI](https://github.com/breylaude/triemplate/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/breylaude/triemplate/actions/workflows/c-cpp.yml)
 # triemplate
 ## Table of Contents
 
